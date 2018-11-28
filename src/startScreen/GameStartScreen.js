@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, Text, View, Image} from 'react-native';
+import {Platform, Text, View, Image, TouchableOpacity} from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 
 // import stylesheet 
@@ -15,6 +15,12 @@ export default class GameStartScreen extends Component<Props> {
           source={require('../assets/images/shapes.png')}
         />
         <Text style={GameStartStyles.welcome}>Remember Me?</Text>
+        <TouchableOpacity style={GameStartStyles.startButtonContainer}>
+          <View style={GameStartStyles.startButtonWrapper}>
+            <Text style={GameStartStyles.welcome}>Start</Text>
+          </View>
+          <View style={GameStartStyles.startButtonShadow}></View>
+        </TouchableOpacity>
       </View>
     );
   }
