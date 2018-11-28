@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
 
 // import components
 import GameStartScreen from './src/startScreen/GameStartScreen';
@@ -17,6 +17,10 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+      <StatusBar
+        backgroundColor="#2E4053"
+        barStyle="light-content"
+      />
         <GameStartScreen />
       </View>
     );
@@ -28,11 +32,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor:'#34495E',
+    // backgroundColor: '#A93226',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-});
+})
