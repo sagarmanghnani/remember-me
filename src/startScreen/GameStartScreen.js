@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {Platform, Text, View, Image, TouchableOpacity} from 'react-native';
-import SvgUri from 'react-native-svg-uri';
+
 
 // import stylesheet 
 import GameStartStyles from './GameStartStyles';
 
-type Props = {};
-export default class GameStartScreen extends Component<Props> {
+export default class GameStartScreen extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <View style={GameStartStyles.container}>
@@ -15,7 +17,7 @@ export default class GameStartScreen extends Component<Props> {
           source={require('../assets/images/shapes.png')}
         />
         <Text style={GameStartStyles.welcome}>Remember Me?</Text>
-        <TouchableOpacity style={GameStartStyles.startButtonContainer}>
+        <TouchableOpacity style={GameStartStyles.startButtonContainer} onPress={this.props.setGameStart}>
           <View style={GameStartStyles.startButtonWrapper}>
             <Text style={GameStartStyles.welcome}>Start</Text>
           </View>
@@ -24,4 +26,4 @@ export default class GameStartScreen extends Component<Props> {
       </View>
     );
   }
-}
+} 
